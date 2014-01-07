@@ -1038,11 +1038,16 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		Notification notification = new Notification(R.drawable.ic_stat_tor,"Test Notificaiton",System.currentTimeMillis());
 		
 		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
-		contentView.setImageViewResource(R.id.n, R.drawable.ic_action_settings);
+		contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
 		contentView.setTextViewText(R.id.notification_title, "My custom notification title");
 		contentView.setTextViewText(R.id.notification_text, "My custom notification text");
 		notification.contentView = contentView;
 		
+		notification.contentIntent=pendIntent;	
+		
+		notification.flags |= Notification.FLAG_NO_CLEAR;
+		
+		mNotificationManager.notify(NOTIFICATION_ID, notification);
 	}
 
 
