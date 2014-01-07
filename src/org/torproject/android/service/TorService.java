@@ -1047,7 +1047,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		
 		notification.flags |= Notification.FLAG_NO_CLEAR;
 		
-		mNotificationManager.notify(NOTIFICATION_ID, notification);
+		mNotificationManager.notify(NOTIFY_ID, notification);
 	}
 
 
