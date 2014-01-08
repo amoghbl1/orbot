@@ -1028,8 +1028,6 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				if (mNotifyBuilder == null)
 				{
 					mNotifyBuilder = new NotificationCompat.Builder(this)
-						/*.setContentTitle(getString(R.string.app_name))
-						.setContentText( getString(R.string.status_activated))*/
 						.setSmallIcon(R.drawable.ic_stat_tor);
 						
 					mNotifyBuilder.setContentIntent(pendIntent);
@@ -1037,8 +1035,10 @@ public class TorService extends Service implements TorServiceConstants, TorConst
  			
 				mNotifyBuilder.setOngoing(persistent);		
 				mNotifyBuilder.setContent(contentView);
+				
 				contentView.setTextViewText(R.id.notification_text, message);
 				contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
+				contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_stat_tor);
 				
 				mNotificationManager.notify(
 			    			NOTIFY_ID,
