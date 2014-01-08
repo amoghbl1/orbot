@@ -3,8 +3,15 @@
     android:id="@+id/custom_notification"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center" >
+    android:gravity="left" >
 
+    <ImageView
+        android:id="@+id/notification_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/notification_title"
+    />
+    
     <TextView 
         android:id="@+id/notification_title"
         android:layout_width="wrap_content"
@@ -18,13 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/notification_title"
         style="@style/NotificationText"
-    />
-    
-    <ImageView
-        android:id="@+id/notification_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/notification_title"
     />
 
 </RelativeLayout>
