@@ -48,6 +48,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -1014,7 +1015,9 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		//Reusable code.
 		Intent intent = new Intent(TorService.this, Orbot.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
-		/*
+		
+		Notification notification = new Notification();
+		
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		
 				if (mNotifyBuilder == null)
@@ -1029,13 +1032,12 @@ public class TorService extends Service implements TorServiceConstants, TorConst
  			
 				mNotifyBuilder.setOngoing(persistent);			    
 				mNotifyBuilder.setContentText(message);
- 
+ /*
 				mNotificationManager.notify(
 			    			NOTIFY_ID,
 			    			mNotifyBuilder.getNotification());
-			*/
+		*/
 		//Testing new code for notification here.
-		Notification notification = new Notification(R.drawable.ic_stat_tor,"Test Notificaiton",System.currentTimeMillis());
 		
 		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
 		contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
