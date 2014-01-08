@@ -31,7 +31,6 @@ import org.torproject.android.TorConstants;
 import org.torproject.android.Utils;
 import org.torproject.android.settings.AppManager;
 
-import android.annotation.SuppressLint;
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -46,13 +45,12 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
+import android.widget.RemoteViews;
 
 public class TorService extends Service implements TorServiceConstants, TorConstants, Runnable, EventHandler
 {
@@ -1016,7 +1014,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		//Reusable code.
 		Intent intent = new Intent(TorService.this, Orbot.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
-		
+		/*
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		
 				if (mNotifyBuilder == null)
@@ -1035,8 +1033,21 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				mNotificationManager.notify(
 			    			NOTIFY_ID,
 			    			mNotifyBuilder.getNotification());
-			
-
+			*/
+		//Testing new code for notification here.
+		Notification notification = new Notification(R.drawable.ic_stat_tor,"Test Notificaiton",System.currentTimeMillis());
+		
+		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
+		contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
+		contentView.setTextViewText(R.id.notification_title, "My custom notification title");
+		contentView.setTextViewText(R.id.notification_text, "My custom notification text");
+		notification.contentView = contentView;
+		
+		notification.contentIntent=pendIntent;	
+		
+		notification.flags |= Notification.FLAG_NO_CLEAR;
+		
+		mNotificationManager.notify(NOTIFY_ID, notification);
 	}
 
 
