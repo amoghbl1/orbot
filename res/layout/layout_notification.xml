@@ -9,13 +9,13 @@
         android:id="@+id/notification_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/notification_title"
     />
     	
     <TextView 
         android:id="@+id/notification_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/notification_image"
         style="@style/NotificationTitle"
     />
 
@@ -23,6 +23,7 @@
         android:id="@+id/notification_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/notification_image"
         android:layout_below="@+id/notification_title"
         style="@style/NotificationText"
     />
