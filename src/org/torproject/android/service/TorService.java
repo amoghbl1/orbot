@@ -1016,7 +1016,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		Intent intent = new Intent(TorService.this, Orbot.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
 		
-		Notification notification = new Notification();
+		Notification notification = null;
 		
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		
@@ -1043,6 +1043,8 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
 		contentView.setTextViewText(R.id.notification_title, "My custom notification title");
 		contentView.setTextViewText(R.id.notification_text, "My custom notification text");
+		
+		notification = mNotifyBuilder.getNotification();
 		notification.contentView = contentView;
 		
 		notification.contentIntent=pendIntent;	
