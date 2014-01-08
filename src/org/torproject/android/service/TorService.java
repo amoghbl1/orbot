@@ -1016,6 +1016,11 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		Intent intent = new Intent(TorService.this, Orbot.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
 		
+		//This is the remote view that will be used for the notification
+		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
+		//contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
+		contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
+		
 		Notification notification = null;
 		
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -1024,8 +1029,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				{
 					mNotifyBuilder = new NotificationCompat.Builder(this)
 						.setContentTitle(getString(R.string.app_name))
-						.setContentText( getString(R.string.status_activated))
-						.setSmallIcon(R.drawable.ic_stat_tor);
+						.setContentText( getString(R.string.status_activated));
 
 					mNotifyBuilder.setContentIntent(pendIntent);
 				}		
@@ -1036,13 +1040,9 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				mNotificationManager.notify(
 			    			NOTIFY_ID,
 			    			mNotifyBuilder.getNotification());
-		*/
-		//Testing new code for notification here.
+		*/	
 		
-		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
-		contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
-		contentView.setTextViewText(R.id.notification_title, "My custom notification title");
-		contentView.setTextViewText(R.id.notification_text, "My custom notification text");
+		contentView.setTextViewText(R.id.notification_text, message);
 		
 		notification = mNotifyBuilder.getNotification();
 		notification.contentView = contentView;
