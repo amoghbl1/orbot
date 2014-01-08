@@ -20,5 +20,11 @@
         style="@style/NotificationText"
     />
     
+    <ImageView
+        android:id="@+id/notification_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/notification_title"
+    />
 
 </RelativeLayout>
