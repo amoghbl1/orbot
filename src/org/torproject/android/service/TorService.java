@@ -1039,7 +1039,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				contentView.setTextViewText(R.id.notification_text, message);
 				contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
 				contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_stat_tor);
-				contentView.setInt(R.id.notification_frame, "setBackgroundColor",Color.parseColor("#FFFFFF"));
+				contentView.setInt(R.id.notification_frame, "setBackgroundColor",Color.parseColor("#000000"));
 				
 				mNotificationManager.notify(
 			    			NOTIFY_ID,
