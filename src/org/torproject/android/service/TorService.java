@@ -1013,7 +1013,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 	private void startNotification (String message, boolean persistent)
 	{
 		//Reusable code.
-		Intent intent = new Intent(TorService.this, Orbot.class);
+		Intent intent = new Intent(TorService.this, NotificationHandler.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
 		
 		//This is the remote view that will be used for the notification
