@@ -16,13 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
     />
-	</FrameLayout>
-    
+	</FrameLayout>   
     <TextView 
         android:id="@+id/notification_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/notification_frame"
+        android:paddingLeft="5dp"
         style="@style/NotificationTitle"
     />
 
@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/notification_frame"
         android:layout_below="@+id/notification_title"
+        android:paddingLeft="5dp"
         style="@style/NotificationText"
     />
 

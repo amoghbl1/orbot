@@ -237,6 +237,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 			mNotifyBuilder.setLights(Color.GREEN, 1000, 1000);
 		}
 		
+		mNotifyBuilder.setContent(notificationView);
 		
 		mNotificationManager.notify(
 					notifyId,
