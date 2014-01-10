@@ -1031,41 +1031,6 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 				
 			}
 		}
-		
-	private void startNotification (String message, boolean persistent)
-	{
-		//Reusable code.
-		Intent intent = new Intent(TorService.this, NotificationHandler.class);
-		PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
-		
-		//This is the remote view that will be used for the notification
-		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
-		//contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
-		contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
-				
-		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-		
-				if (mNotifyBuilder == null)
-				{
-					mNotifyBuilder = new NotificationCompat.Builder(this)
-						.setSmallIcon(R.drawable.ic_stat_tor);
-						
-					mNotifyBuilder.setContentIntent(pendIntent);
-				}		
- 			
-				mNotifyBuilder.setOngoing(persistent);		
-				mNotifyBuilder.setContent(contentView);
-				
-				contentView.setTextViewText(R.id.notification_text, message);
-				contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
-				contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_stat_tor);
-				//contentView.setInt(R.id.notification_frame, "setBackgroundColor",R.color.abs__bright_foreground_disabled_holo_light);
-				
-				mNotificationManager.notify(
-			    			NOTIFY_ID,
-			    			mNotifyBuilder.getNotification());
-		
-	}
 
 	public void message(String severity, String msg) {
 		
