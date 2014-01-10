@@ -201,6 +201,8 @@ public class TorService extends Service implements TorServiceConstants, TorConst
    
  	private void showToolbarNotification (String notifyMsg, int notifyId, int icon, int flags, boolean isOngoing)
  	{
+ 		//This is the remote view that will be used for the notification
+		RemoteViews notificationView = new RemoteViews(getPackageName(),R.layout.layout_notification);
  				    
 		if (mNotifyBuilder == null)
 		{
@@ -209,8 +211,6 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 			Intent intent = new Intent(TorService.this, Orbot.class);
 			PendingIntent pendIntent = PendingIntent.getActivity(TorService.this, 0, intent, 0);
 			
-			//This is the remote view that will be used for the notification
-			RemoteViews notificationView = new RemoteViews(getPackageName(),R.layout.layout_notification);
 			
 			mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			
@@ -223,7 +223,8 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 			mNotifyBuilder.setContentIntent(pendIntent);
 								
 		}
-
+		
+		
 		mNotifyBuilder.setContentText(notifyMsg);
 		mNotifyBuilder.setSmallIcon(icon);
 		mNotifyBuilder.setOngoing(isOngoing);
