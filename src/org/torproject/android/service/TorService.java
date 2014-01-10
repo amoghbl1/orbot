@@ -215,10 +215,11 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 			mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			
 			mNotifyBuilder = new NotificationCompat.Builder(this)
-				.setContentTitle(getString(R.string.app_name))
-				.setContentText( getString(R.string.status_activated))
 				.setSmallIcon(R.drawable.ic_stat_tor);
-
+			
+			notificationView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
+			notificationView.setTextViewText(R.id.notification_text, getString(R.string.status_activated));
+			
 			mNotifyBuilder.setContentIntent(pendIntent);
 								
 		}
