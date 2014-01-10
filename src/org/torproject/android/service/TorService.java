@@ -225,8 +225,9 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		}
 		
 		
-		mNotifyBuilder.setContentText(notifyMsg);
-		mNotifyBuilder.setSmallIcon(icon);
+		notificationView.setTextViewText(R.id.notification_text, notifyMsg);
+		notificationView.setImageViewResource(R.id.notification_image, icon);
+		
 		mNotifyBuilder.setOngoing(isOngoing);
 		
 		if (notifyId == ERROR_NOTIFY_ID)
