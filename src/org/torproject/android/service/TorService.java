@@ -1020,9 +1020,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.layout_notification);
 		//contentView.setImageViewResource(R.id.notification_image, R.drawable.ic_action_settings);
 		contentView.setTextViewText(R.id.notification_title, getString(R.string.app_name));
-		
-		Notification notification = null;
-		
+				
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		
 				if (mNotifyBuilder == null)
