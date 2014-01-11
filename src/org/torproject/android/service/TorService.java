@@ -203,7 +203,9 @@ public class TorService extends Service implements TorServiceConstants, TorConst
  	{
  		//This is the remote view that will be used for the notification
 		RemoteViews notificationView = new RemoteViews(getPackageName(),R.layout.layout_notification);
- 				    
+		//This is the expanded remote view that will be used for the notification
+		RemoteViews expandedNotificationView = new RemoteViews(getPackageName(),R.layout.layout_notification);
+		
 		if (mNotifyBuilder == null)
 		{
 			
