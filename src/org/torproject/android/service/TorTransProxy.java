@@ -8,7 +8,6 @@ import org.torproject.android.settings.TorifiedApp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class TorTransProxy implements TorServiceConstants {

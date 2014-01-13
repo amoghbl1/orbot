@@ -1,7 +1,5 @@
 package org.torproject.android.service;
 
-import org.torproject.android.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 

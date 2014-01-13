@@ -4,8 +4,6 @@ import org.torproject.android.R;
 import org.torproject.android.TorConstants;
 import org.torproject.android.service.Root;
 import org.torproject.android.service.TorService;
-import org.torproject.android.service.TorServiceUtils;
-import org.torproject.android.service.TorTransProxy;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,7 +20,6 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Permissions extends Activity implements TorConstants {
 
