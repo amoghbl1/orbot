@@ -229,6 +229,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		
 		notificationView.setTextViewText(R.id.notification_text, notifyMsg);
 		notificationView.setImageViewResource(R.id.notification_image, icon);
+		notificationView.setImageViewResource(R.id.notification_stop_button, R.drawable.ic_stat_notify_stop_tor);
 		
 		mNotifyBuilder.setOngoing(isOngoing);
 		
