@@ -35,5 +35,11 @@
         android:paddingLeft="5dp"
         style="@style/NotificationText"
     />
+    <ImageButton
+        android:id="@+id/notification_stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/notification_text"
+        ></ImageButton>
 
 </RelativeLayout>
