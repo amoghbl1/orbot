@@ -35,4 +35,18 @@
         android:paddingLeft="5dp"
         style="@style/NotificationText"
     />
+    <Button 
+        android:id="@+id/test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="this is a test buttonn"
+        android:layout_below="@+id/notification_frame"
+        ></Button>
+    <Button 
+        android:id="@+id/test1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="this is a test buttonn"
+        android:layout_below="@+id/test"
+        ></Button>
 </RelativeLayout>
