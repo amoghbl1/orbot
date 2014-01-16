@@ -203,6 +203,8 @@ public class TorService extends Service implements TorServiceConstants, TorConst
  	{
  		//This is the remote view that will be used for the notification
 		RemoteViews notificationView = new RemoteViews(getPackageName(),R.layout.layout_notification);
+		// Notification to be used if remote expanded view is used.
+		Notification notification;
 		
 		if (mNotifyBuilder == null)
 		{
@@ -239,11 +241,18 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		
 		mNotifyBuilder.setContent(notificationView);
 		
+		notification = mNotifyBuilder.build();
+		notification.bigContentView = notificationView;
+		
 		mNotificationManager.notify(
+					notifyId,
+					notification);
+		
+		/*mNotificationManager.notify(
 					notifyId,
 	    			mNotifyBuilder.build());
 			
-		
+		*/
  	}
     
     /* (non-Javadoc)
