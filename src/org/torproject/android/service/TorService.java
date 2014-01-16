@@ -243,7 +243,7 @@ public class TorService extends Service implements TorServiceConstants, TorConst
 		
 		mNotificationManager.notify(
 					notifyId,
-	    			mNotifyBuilder.getNotification());
+	    			mNotifyBuilder.build());
 			
 		
  	}
