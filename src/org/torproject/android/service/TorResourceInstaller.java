@@ -22,16 +22,13 @@ import org.torproject.android.TorConstants;
 import android.content.Context;
 import android.util.Log;
 
-public class TorBinaryInstaller implements TorServiceConstants {
+public class TorResourceInstaller implements TorServiceConstants {
 
 	
 	File installFolder;
 	Context context;
 	
-    private static int isARMv6 = -1;
-    private static String CHMOD_EXEC = "700";
-    
-	public TorBinaryInstaller (Context context, File installFolder)
+	public TorResourceInstaller (Context context, File installFolder)
 	{
 		this.installFolder = installFolder;
 		
@@ -40,7 +37,7 @@ public class TorBinaryInstaller implements TorServiceConstants {
 	
 	//		
 	/*
-	 * Extract the Tor binary from the APK file using ZIP
+	 * Extract the Tor resources from the APK file using ZIP
 	 */
 	public boolean installResources () throws IOException, FileNotFoundException
 	{
@@ -174,33 +171,7 @@ public class TorBinaryInstaller implements TorServiceConstants {
 	
 	
 
-    /**
-	 * Check if this is an ARMv6 device
-	 * @return true if this is ARMv6
-	 */
-	private static boolean isARMv6() {
-		if (isARMv6 == -1) {
-			BufferedReader r = null;
-			try {
-				isARMv6 = 0;
-				r = new BufferedReader(new FileReader("/proc/cpuinfo"));
-				for (String line = r.readLine(); line != null; line = r.readLine()) {
-					if (line.startsWith("Processor") && line.contains("ARMv6")) {
-						isARMv6 = 1;
-						break;
-					} else if (line.startsWith("CPU architecture") && (line.contains("6TE") || line.contains("5TE"))) {
-						isARMv6 = 1;
-						break;
-					}
-				}
-			} catch (Exception ex) {
-			} finally {
-				if (r != null) try {r.close();} catch (Exception ex) {}
-			}
-		}
-		return (isARMv6 == 1);
-	}
-	
+   
 	/**
 	 * Copies a raw resource file, given its ID to the given location
 	 * @param ctx context
