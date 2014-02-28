@@ -67,6 +67,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 
 				String url = getString(R.string.gibberbot_apk_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -79,6 +80,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 				
 				String url = getString(R.string.orweb_apk_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -91,6 +93,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 				
 				String url = getString(R.string.duckgo_apk_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -103,6 +106,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 				
 				String url = getString(R.string.proxymob_setup_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -115,6 +119,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 				
 				String url = getString(R.string.twitter_setup_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -128,6 +133,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			public void onClick(View view) {
 				
 				String url = getString(R.string.wizard_tips_play_url);
+				finish();
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 
 			}
@@ -141,7 +147,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
         back.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 			}
 		});
@@ -178,6 +184,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
     	btn1.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 
 			}
@@ -186,6 +193,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
     	btn2.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Orbot.class), 1);
 
 			}
@@ -205,6 +213,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				finish();
 				context.startActivity(new Intent(context, Orbot.class));
 
 			}
