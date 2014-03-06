@@ -134,7 +134,7 @@ public class LotsaText extends Activity implements TorConstants{
     	btn2.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 			}
 		});
