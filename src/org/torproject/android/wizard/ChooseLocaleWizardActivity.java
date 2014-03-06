@@ -13,11 +13,14 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ChooseLocaleWizardActivity extends Activity implements TorConstants {
 
@@ -125,7 +128,17 @@ public class ChooseLocaleWizardActivity extends Activity implements TorConstants
     
 		
 	}
-
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
+	    if(keyCode == KeyEvent.KEYCODE_BACK){
+	    	Toast.makeText(getApplicationContext(), R.string.wizard_exit_at_first_screen_toast, Toast.LENGTH_SHORT).show();
+	    	return true;
+	    }
+	    return true;
+	}
+	
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
