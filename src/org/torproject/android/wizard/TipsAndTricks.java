@@ -30,7 +30,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 		
 		super.onStart();
 		setContentView(R.layout.layout_wizard_tips);
-		Toast.makeText(getApplicationContext(), "here", 0).show();
+		
 		stepFive();
         
 	}
@@ -208,7 +208,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
 	    if(keyCode == KeyEvent.KEYCODE_BACK){
 	    	finish();
-			startActivityForResult(new Intent(getBaseContext(), Orbot.class), 1);
+			startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 	    	return true;
 	    }
 	    return true;
