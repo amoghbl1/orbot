@@ -197,7 +197,7 @@ public class Permissions extends Activity implements TorConstants {
     	 
 			
 			public void onClick(View v) {
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), TipsAndTricks.class), 1);
 			}
 		});
@@ -235,7 +235,6 @@ public class Permissions extends Activity implements TorConstants {
     	btn1.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				
 				startActivityForResult(new Intent(getBaseContext(), LotsaText.class), 1);
 			}
 		});
@@ -243,7 +242,7 @@ public class Permissions extends Activity implements TorConstants {
     	btn2.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), TipsAndTricks.class), 1);
 			}
 		});
