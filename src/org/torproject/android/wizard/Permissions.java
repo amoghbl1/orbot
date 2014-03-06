@@ -13,6 +13,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -177,7 +178,7 @@ public class Permissions extends Activity implements TorConstants {
 						stepFour();
 					}
 				}
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), ConfigureTransProxy.class), 1);
 
 				
@@ -187,7 +188,7 @@ public class Permissions extends Activity implements TorConstants {
     	back.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), LotsaText.class), 1);
 			}
 		});
@@ -235,6 +236,7 @@ public class Permissions extends Activity implements TorConstants {
     	btn1.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), LotsaText.class), 1);
 			}
 		});
@@ -247,6 +249,17 @@ public class Permissions extends Activity implements TorConstants {
 			}
 		});
 	}
-		
+	
+	//Code to override the back button!
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
+	    if(keyCode == KeyEvent.KEYCODE_BACK){
+	    	finish();
+	    	startActivityForResult(new Intent(getBaseContext(), LotsaText.class), 1);
+	    	return true;
+	    }
+	    return true;
+	}
 	
 }
