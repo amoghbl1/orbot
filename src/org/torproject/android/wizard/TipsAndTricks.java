@@ -206,6 +206,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
 	//Code to override the back button!
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		
 		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
 	    if(keyCode == KeyEvent.KEYCODE_BACK){
 	    	doBack();

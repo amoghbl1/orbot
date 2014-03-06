@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -106,7 +108,7 @@ public class ConfigureTransProxy extends Activity implements TorConstants {
 		    back.setOnClickListener(new View.OnClickListener() {
 					
 				public void onClick(View v) {
-					
+					finish();
 					startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 				}
 			});
@@ -114,7 +116,7 @@ public class ConfigureTransProxy extends Activity implements TorConstants {
 		    next.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View v) {
-					
+					finish();
 					startActivityForResult(new Intent(getBaseContext(), TipsAndTricks.class), 1);
 
 				}
@@ -129,7 +131,7 @@ public class ConfigureTransProxy extends Activity implements TorConstants {
     		{
 
 				public void onClick(View v) {
-						
+						finish();
 						context.startActivity(new Intent(context, AppManager.class));							
 					
 					
@@ -184,7 +186,16 @@ public class ConfigureTransProxy extends Activity implements TorConstants {
 
 	       
 	}
-	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
+	    if(keyCode == KeyEvent.KEYCODE_BACK){
+	    	finish();
+			startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
+	    	return true;
+	    }
+	    return true;
+	}
 	/*
 	private void showWizardFinal ()
 	{
