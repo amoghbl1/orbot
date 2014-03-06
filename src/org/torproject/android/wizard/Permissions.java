@@ -253,7 +253,6 @@ public class Permissions extends Activity implements TorConstants {
 	//Code to override the back button!
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
-		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
 	    if(keyCode == KeyEvent.KEYCODE_BACK){
 	    	finish();
 	    	startActivityForResult(new Intent(getBaseContext(), LotsaText.class), 1);
