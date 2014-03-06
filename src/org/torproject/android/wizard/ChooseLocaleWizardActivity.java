@@ -47,9 +47,6 @@ public class ChooseLocaleWizardActivity extends Activity implements TorConstants
 		super.onResume();
 	
 		 setupUI();
-	
-		
-		
 	}
 
 	
