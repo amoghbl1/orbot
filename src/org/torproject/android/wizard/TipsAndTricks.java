@@ -150,6 +150,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
         back.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 			}
 		});
@@ -186,6 +187,7 @@ public class TipsAndTricks extends Activity implements TorConstants {
     	btn1.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
+				finish();
 				startActivityForResult(new Intent(getBaseContext(), Permissions.class), 1);
 
 			}
@@ -200,16 +202,15 @@ public class TipsAndTricks extends Activity implements TorConstants {
 			}
 		});
 	}
-	private void doBack(){
-		Log.i("myTag", "doBack!");
-	}
+	
 	//Code to override the back button!
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
 		
 		Log.d("myTag", "IT HAS BEEN CLICKED :O"+keyCode+"    "+event);
 	    if(keyCode == KeyEvent.KEYCODE_BACK){
-	    	doBack();
+	    	finish();
+			startActivityForResult(new Intent(getBaseContext(), Orbot.class), 1);
 	    	return true;
 	    }
 	    return true;
